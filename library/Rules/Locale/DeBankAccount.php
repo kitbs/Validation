@@ -35,7 +35,7 @@ class DeBankAccount extends AbstractDeBank
      */
     public function __construct($bank, BAV $bav = null)
     {
-        parent::construct($bav);
+        parent::__construct($bav);
         $this->bank = $bank;
     }
 
