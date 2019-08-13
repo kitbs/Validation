@@ -29,7 +29,8 @@
         "symfony/validator": "Use Symfony validator through Respect\\Validation",
         "zendframework/zend-validator": "Use Zend Framework validator through Respect\\Validation",
         "friendsofphp/php-cs-fixer": "Fix PSR2 and other coding style issues",
-        "malkusch/bav": "Validate bank accounts for Germany"
+        "malkusch/bav": "Validate bank accounts for Germany",
+        "cs278/bank-modulus": "Validate bank accounts for the United Kingdom"
     },
     "autoload": {
         "psr-4": {

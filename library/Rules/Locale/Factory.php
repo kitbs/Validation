@@ -46,6 +46,9 @@ class Factory
             case 'DE':
                 return new DeBank();
 
+            case 'GB':
+                return new GbBank();
+
             default:
                 throw new ComponentException(
                     sprintf(
@@ -65,6 +68,9 @@ class Factory
         switch ($filteredCountryCode) {
             case 'DE':
                 return new DeBankAccount($bank);
+
+            case 'GB':
+                return new GbBankAccount($bank);
 
             default:
                 throw new ComponentException(
