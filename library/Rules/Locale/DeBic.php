@@ -15,15 +15,22 @@ use malkusch\bav\BAV;
 use Respect\Validation\Rules\AbstractRule;
 
 /**
- * Validates a german bank.
+ * Validates a German BIC (Bank Identifier Code).
  *
  * This validator depends on the composer package "malkusch/bav".
  *
+ * Note: It is not recommended to use this validator with BAV's default
+ * configuration. Use a configuration with one of the following
+ * DataBackendContainer implementations:
+ * PDODataBackendContainer or DoctrineBackendContainer.
+ *
  * @author Markus Malkusch <markus@malkusch.de>
  *
- * @see    BAV::isValidBank()
+ * @see    BAV::isValidBIC()
+ * @see    \malkusch\bav\Configuration
+ * @see    \malkusch\bav\ConfigurationRegistry::setConfiguration()
  */
-class GermanBank extends AbstractRule
+class DeBic extends AbstractRule
 {
     /**
      * @var BAV
@@ -46,6 +53,6 @@ class GermanBank extends AbstractRule
      */
     public function validate($input)
     {
-        return $this->bav->isValidBank($input);
+        return $this->bav->isValidBIC($input);
     }
 }

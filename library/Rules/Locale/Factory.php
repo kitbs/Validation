@@ -24,7 +24,7 @@ class Factory
         $filteredCountryCode = strtoupper($countryCode);
         switch ($filteredCountryCode) {
             case 'DE':
-                return new GermanBic();
+                return new DeBic();
 
             default:
                 throw new ComponentException(
@@ -44,7 +44,7 @@ class Factory
         $filteredCountryCode = strtoupper($countryCode);
         switch ($filteredCountryCode) {
             case 'DE':
-                return new GermanBank();
+                return new DeBank();
 
             default:
                 throw new ComponentException(
@@ -64,7 +64,7 @@ class Factory
         $filteredCountryCode = strtoupper($countryCode);
         switch ($filteredCountryCode) {
             case 'DE':
-                return new GermanBankAccount($bank);
+                return new DeBankAccount($bank);
 
             default:
                 throw new ComponentException(

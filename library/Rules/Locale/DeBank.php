@@ -15,21 +15,16 @@ use malkusch\bav\BAV;
 use Respect\Validation\Rules\AbstractRule;
 
 /**
- * Validates a german bank account.
+ * Validates a German bank.
  *
  * This validator depends on the composer package "malkusch/bav".
  *
  * @author Markus Malkusch <markus@malkusch.de>
  *
- * @see    BAV::isValidBankAccount()
+ * @see    BAV::isValidBank()
  */
-class GermanBankAccount extends AbstractRule
+class DeBank extends AbstractRule
 {
-    /**
-     * @var string
-     */
-    public $bank;
-
     /**
      * @var BAV
      */
@@ -38,13 +33,12 @@ class GermanBankAccount extends AbstractRule
     /**
      * @param BAV $bav
      */
-    public function __construct($bank, BAV $bav = null)
+    public function __construct(BAV $bav = null)
     {
         if (null === $bav) {
             $bav = new BAV();
         }
         $this->bav = $bav;
-        $this->bank = $bank;
     }
 
     /**
@@ -52,6 +46,6 @@ class GermanBankAccount extends AbstractRule
      */
     public function validate($input)
     {
-        return $this->bav->isValidBankAccount($this->bank, $input);
+        return $this->bav->isValidBank($input);
     }
 }
