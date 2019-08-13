@@ -13,14 +13,14 @@ namespace Respect\Validation\Exceptions\Locale;
 
 use Respect\Validation\Exceptions\BankAccountException;
 
-class GermanBankAccountException extends BankAccountException
+class DeBankAccountException extends BankAccountException
 {
     public static $defaultTemplates = [
         self::MODE_DEFAULT => [
-            self::STANDARD => '{{name}} must be a german bank account',
+            self::STANDARD => '{{name}} must be a German bank account',
         ],
         self::MODE_NEGATIVE => [
-            self::STANDARD => '{{name}} must not be a german bank account',
+            self::STANDARD => '{{name}} must not be a German bank account',
         ],
     ];
 }
