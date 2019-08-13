@@ -23,24 +23,8 @@ use Respect\Validation\Rules\AbstractRule;
  *
  * @see    BAV::isValidBank()
  */
-class DeBank extends AbstractRule
+class DeBank extends AbstractDeBank
 {
-    /**
-     * @var BAV
-     */
-    public $bav;
-
-    /**
-     * @param BAV $bav
-     */
-    public function __construct(BAV $bav = null)
-    {
-        if (null === $bav) {
-            $bav = new BAV();
-        }
-        $this->bav = $bav;
-    }
-
     /**
      * @return bool
      */

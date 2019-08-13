@@ -30,24 +30,8 @@ use Respect\Validation\Rules\AbstractRule;
  * @see    \malkusch\bav\Configuration
  * @see    \malkusch\bav\ConfigurationRegistry::setConfiguration()
  */
-class DeBic extends AbstractRule
+class DeBic extends AbstractDeBank
 {
-    /**
-     * @var BAV
-     */
-    public $bav;
-
-    /**
-     * @param BAV $bav
-     */
-    public function __construct(BAV $bav = null)
-    {
-        if (null === $bav) {
-            $bav = new BAV();
-        }
-        $this->bav = $bav;
-    }
-
     /**
      * @return bool
      */

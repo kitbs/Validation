@@ -21,29 +21,23 @@ use Respect\Validation\Rules\AbstractRule;
  *
  * @author Markus Malkusch <markus@malkusch.de>
  *
- * @see    BAV::isValidBankAccount()
+ * @see    BAV
  */
-class DeBankAccount extends AbstractDeBank
+abstract class AbstractDeBank extends AbstractRule
 {
     /**
-     * @var string
+     * @var BAV
      */
-    public $bank;
+    public $bav;
 
     /**
      * @param BAV $bav
      */
-    public function __construct($bank, BAV $bav = null)
+    public function __construct(BAV $bav = null)
     {
-        parent::construct($bav);
-        $this->bank = $bank;
-    }
-
-    /**
-     * @return bool
-     */
-    public function validate($input)
-    {
-        return $this->bav->isValidBankAccount($this->bank, $input);
+        if (null === $bav) {
+            $bav = new BAV();
+        }
+        $this->bav = $bav;
     }
 }
