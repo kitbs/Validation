@@ -30,7 +30,7 @@ use Respect\Validation\Rules\Key;
  * @method static Validator arrayType()
  * @method static Validator attribute(string $reference, Validatable $validator = null, bool $mandatory = true)
  * @method static Validator bank(string $countryCode)
- * @method static Validator bankAccount(string $countryCode)
+ * @method static Validator bankAccount(string $countryCode, string $bank)
  * @method static Validator base()
  * @method static Validator between($min = null, $max = null, bool $inclusive = true)
  * @method static Validator bic(string $countryCode)
