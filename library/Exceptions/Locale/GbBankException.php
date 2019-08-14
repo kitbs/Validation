@@ -17,10 +17,10 @@ class GbBankException extends BankException
 {
     public static $defaultTemplates = [
         self::MODE_DEFAULT => [
-            self::STANDARD => '{{name}} must be a United Kingdom bank',
+            self::STANDARD => '{{name}} must be a United Kingdom bank sort code',
         ],
         self::MODE_NEGATIVE => [
-            self::STANDARD => '{{name}} must not be a United Kingdom bank',
+            self::STANDARD => '{{name}} must not be a United Kingdom bank sort code',
         ],
     ];
 }

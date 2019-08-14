@@ -15,10 +15,9 @@ use InvalidArgumentException;
 
 use Cs278\BankModulus\SortCode;
 use Cs278\BankModulus\Exception\SortCodeInvalidException;
-use Respect\Validation\Rules\Bank;
 
 /**
- * Validates a United Kingdom bank.
+ * Validates a United Kingdom bank account.
  *
  * This validator depends on the composer package "cs278/bank-modulus".
  *
@@ -26,7 +25,7 @@ use Respect\Validation\Rules\Bank;
  *
  * @see    SortCode::create()
  */
-class GbBank extends Bank
+class GbBank extends AbstractGbBank
 {
     /**
      * @return bool

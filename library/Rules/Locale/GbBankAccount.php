@@ -36,6 +36,7 @@ class GbBankAccount extends AbstractGbBank
     public function __construct($bank, $normalize = true, BankModulus $modulus = null)
     {
         parent::__construct($normalize, $modulus);
+
         $this->bank = $bank;
     }
 
@@ -44,7 +45,12 @@ class GbBankAccount extends AbstractGbBank
      */
     public function validate($input)
     {
+        $gbBank = new GbBank();
         $bank = $this->bank;
+
+        if (!$gbBank->validate($bank)) {
+            return false;
+        }
 
         if ($this->normalize) {
             $this->modulus->normalize($bank, $input);
